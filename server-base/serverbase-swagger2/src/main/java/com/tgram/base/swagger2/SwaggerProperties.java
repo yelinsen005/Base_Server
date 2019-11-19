@@ -102,8 +102,6 @@ public class SwaggerProperties {
      **/
     private List<GlobalOperationParameter> globalOperationParameters;
 
-    @Setter
-    @Getter
     public static class GlobalOperationParameter {
         /**
          * 参数名

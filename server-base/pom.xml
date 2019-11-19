@@ -20,7 +20,7 @@
         <module>serverbase-gateway</module>
         <module>serverbase-databases</module>
         <module>serverbase-demo</module>
-
+        <module>serverbase-swagger2</module>
     </modules>
 
     <properties>
