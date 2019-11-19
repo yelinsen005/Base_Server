@@ -1,4 +1,4 @@
-zuihou:
+serverbase:
   local-ip: ${LOCAL_IP:${spring.cloud.client.ip-address}}
   nacos:
     ip: ${NACOS_IP:@pom.nacos.ip@}
@@ -15,18 +15,18 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: ${zuihou.nacos.ip}:${zuihou.nacos.port}
+        server-addr: ${serverbase.nacos.ip}:${serverbase.nacos.port}
         file-extension: yml
-        namespace: ${zuihou.nacos.namespace}
+        namespace: ${serverbase.nacos.namespace}
         shared-dataids: common.yml,redis.yml,mysql.yml,rabbitmq.yml
         refreshable-dataids: common.yml
         enabled: true
       discovery:
-        server-addr: ${zuihou.nacos.ip}:${zuihou.nacos.port}
-        namespace: ${zuihou.nacos.namespace}
+        server-addr: ${serverbase.nacos.ip}:${serverbase.nacos.port}
+        namespace: ${serverbase.nacos.namespace}
         metadata:
           management.context-path: ${server.servlet.context-path:}${spring.mvc.servlet.path:}${management.endpoints.web.base-path:}
-          swagger: http://${zuihou.local-ip}:${server.port:}/swagger-resources
+          swagger: http://${serverbase.local-ip}:${server.port:}/swagger-resources
           service.name: 演示服务
 
 logging:

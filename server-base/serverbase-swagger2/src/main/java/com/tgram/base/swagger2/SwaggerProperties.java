@@ -14,12 +14,12 @@ import java.util.Map;
  * swagger2 属性配置
  * 必须配置 prefix ，才能有提示
  *
- * @author zuihou
+ * @author dean
  * @date 2019
  */
 @Data
 //@RefreshScope
-@ConfigurationProperties(prefix = "zuihou.swagger")
+@ConfigurationProperties(prefix = "serverbase.swagger")
 public class SwaggerProperties {
     /**
      * 是否开启swagger
@@ -49,7 +49,7 @@ public class SwaggerProperties {
     /**
      * 描述
      **/
-    private String description = "zuihou-admin-cloud 在线文档";
+    private String description = "tgram-cloud 在线文档";
     /**
      * 版本
      **/
@@ -72,7 +72,7 @@ public class SwaggerProperties {
     /**
      * swagger会解析的包路径
      **/
-    private String basePackage = "com.github.zuihou";
+    private String basePackage = "com.tgram.base";
 
     /**
      * swagger会解析的url规则
@@ -127,6 +127,26 @@ public class SwaggerProperties {
          * 参数是否必须传
          **/
         private String required;
+
+        public String getName() {
+            return name;
+        }
+
+        public String getModelRef() {
+            return modelRef;
+        }
+
+        public String getParameterType() {
+            return parameterType;
+        }
+
+        public String getRequired() {
+            return required;
+        }
+
+        public String getDescription() {
+            return description;
+        }
     }
 
     @Data
@@ -142,7 +162,7 @@ public class SwaggerProperties {
         /**
          * 描述
          **/
-        private String description = "zuihou-admin-cloud 在线文档";
+        private String description = "tgram-cloud 在线文档";
         /**
          * 版本
          **/
@@ -203,15 +223,15 @@ public class SwaggerProperties {
         /**
          * 联系人
          **/
-        private String name = "zuihou";
+        private String name = "tgram";
         /**
          * 联系人url
          **/
-        private String url = "https://github.com/zuihou/zuihou-admin-cloud";
+        private String url = "https://www.tgram.com/";
         /**
          * 联系人email
          **/
-        private String email = "244387066@qq.com";
+        private String email = "tgram@email.com";
     }
 
     @Data
@@ -219,8 +239,8 @@ public class SwaggerProperties {
     @NoArgsConstructor
     public static class Basic {
         private Boolean enable = false;
-        private String username = "zuihou";
-        private String password = "zuihou";
+        private String username = "tgram";
+        private String password = "tgram";
     }
 
     @Data
