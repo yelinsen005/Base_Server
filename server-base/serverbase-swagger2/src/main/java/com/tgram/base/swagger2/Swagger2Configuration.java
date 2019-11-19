@@ -18,14 +18,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Swagger2 启动类
  * 启动条件：
- * 1，配置文件中zuihou.swagger.enabled=true
- * 2，配置文件中不存在：zuihou.swagger.enabled 值
+ * 1，配置文件中serverbase.swagger.enabled=true
+ * 2，配置文件中不存在：serverbase.swagger.enabled 值
  *
  * @author dean
  * @date 2019
  */
 @Configuration
-@ConditionalOnProperty(name = "zuihou.swagger.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "serverbase.swagger.enabled", havingValue = "true", matchIfMissing = true)
 @EnableSwagger2
 /*@EnableSwaggerBootstrapUI*/
 @Import({BeanValidatorPluginsConfiguration.class, SwaggerBootstrapUIConfiguration.class, Swagger2Configuration.ZhSecurityConfiguration.class})
@@ -52,14 +52,14 @@ public class Swagger2Configuration implements WebMvcConfigurer {
 
         @Bean
         @ConditionalOnMissingBean
-        @ConditionalOnProperty(name = "zuihou.swagger.production", havingValue = "true")
+        @ConditionalOnProperty(name = "serverbase.swagger.production", havingValue = "true")
         public ProductionSecurityFilter productionSecurityFilter(SwaggerProperties swaggerProperties) {
             return new ProductionSecurityFilter(swaggerProperties.getProduction());
         }
 
         @Bean
         @ConditionalOnMissingBean
-        @ConditionalOnProperty(name = "zuihou.swagger.basic.enable", havingValue = "true")
+        @ConditionalOnProperty(name = "serverbase.swagger.basic.enable", havingValue = "true")
         public SecurityBasicAuthFilter securityBasicAuthFilter(SwaggerProperties swaggerProperties) {
             SwaggerProperties.Basic basic = swaggerProperties.getBasic();
             return new SecurityBasicAuthFilter(basic.getEnable(), basic.getUsername(), basic.getPassword());
@@ -67,7 +67,7 @@ public class Swagger2Configuration implements WebMvcConfigurer {
 
         @Bean(initMethod = "init")
         @ConditionalOnMissingBean
-        @ConditionalOnProperty(name = "zuihou.swagger.markdown.enable", havingValue = "true")
+        @ConditionalOnProperty(name = "serverbase.swagger.markdown.enable", havingValue = "true")
         public MarkdownFiles markdownFiles(SwaggerProperties swaggerProperties) {
             return new MarkdownFiles(swaggerProperties.getMarkdown().getBasePath());
         }

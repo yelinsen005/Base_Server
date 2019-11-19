@@ -43,7 +43,7 @@ public class SwaggerAutoConfiguration implements BeanFactoryAware {
 
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnProperty(name = "zuihou.swagger.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "serverbase.swagger.enabled", havingValue = "true", matchIfMissing = true)
     public List<Docket> createRestApi() {
         ConfigurableBeanFactory configurableBeanFactory = (ConfigurableBeanFactory) beanFactory;
         List<Docket> docketList = new LinkedList<>();
@@ -257,9 +257,9 @@ public class SwaggerAutoConfiguration implements BeanFactoryAware {
     /**
      * 局部参数按照name覆盖局部参数
      *
-     * @param globalOperationParameters
-     * @param docketOperationParameters
-     * @return
+     * @param globalOperationParameters globalOperationParameters
+     * @param docketOperationParameters docketOperationParameters
+     * @return List
      */
     private List<Parameter> assemblyGlobalOperationParameters(
             List<SwaggerProperties.GlobalOperationParameter> globalOperationParameters,

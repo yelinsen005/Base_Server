@@ -36,6 +36,7 @@
         <mybatisplus.version>3.2.0</mybatisplus.version>
         <mybatis.typehandlers.version>1.0.2</mybatis.typehandlers.version>
         <sbu.version>1.9.6</sbu.version>
+        <maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
 
     </properties>
 
