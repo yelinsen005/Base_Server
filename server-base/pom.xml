@@ -21,7 +21,10 @@
         <module>serverbase-databases</module>
         <module>serverbase-demo</module>
         <module>serverbase-swagger2</module>
+<<<<<<< HEAD
+=======
 
+>>>>>>> f3ce280302cf24913f1a98880dfbedc03e22a49e
     </modules>
 
     <properties>
