@@ -10,37 +10,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zuihou-demo-controller</artifactId>
+    <artifactId>serverbase-demo-controller</artifactId>
     <name>${project.artifactId}</name>
     <description>演示服务接口模块</description>
     <dependencies>
         <dependency>
-            <groupId>com.github.zuihou</groupId>
+            <groupId>com.tgram.base</groupId>
             <artifactId>serverbase-demo-biz</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.zuihou</groupId>
-            <artifactId>zuihou-authority-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.zuihou</groupId>
-            <artifactId>zuihou-file-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.zuihou</groupId>
-            <artifactId>zuihou-log-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.zuihou</groupId>
-            <artifactId>zuihou-user-starter</artifactId>
-        </dependency>
-
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.xiaoymin</groupId>-->
-        <!--            <artifactId>swagger-bootstrap-ui</artifactId>-->
-        <!--        </dependency>-->
-
     </dependencies>
 
 </project>
