@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>serverbase-demo</artifactId>
-    <name>${project.artifactId}</name>
+    <name>serverbase-demo</name>
     <description>演示用例</description>
 
     <packaging>pom</packaging>
