@@ -8,10 +8,10 @@
         <version>2.1.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.tgram.base</groupId>
-    <artifactId>base-api</artifactId>
+    <groupId>com.tgram.base.swagger2-starter</groupId>
+    <artifactId>serverbase-swagger2</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>base-api</name>
+    <name>serverbase-swagger2</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

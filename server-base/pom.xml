@@ -16,6 +16,10 @@
 
     <modules>
         <module>serverbase-api</module>
+        <module>serverbase-gateway</module>
+        <module>serverbase-demo</module>
+        <module>serverbase-databases</module>
+
     </modules>
 
 
