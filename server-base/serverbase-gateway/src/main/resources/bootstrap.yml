@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: serverbase-databases #随便定义不重复就好
+        predicates:
+        - Path=/serverbase-databases/**
+        filters:
+        - StripPrefix=1
+        uri: lb:serverbase-databases #服务名称
