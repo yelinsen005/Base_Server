@@ -1,10 +1,21 @@
 spring:
   cloud:
     gateway:
+      default-filters: #代表默认的过滤器，这是一个全局的过滤器，不属于任何一个route
+      discovery:
+        locator:
+          enabled: true # 表示注册中心生效，我们可以通过注册中心的服务名进行路由转发
       routes:
-      - id: serverbase-databases #随便定义不重复就好
+      - id: demo01 #表示路由的唯一id
+        predicates: #表示path地址，根据url，以demo01开头的会被转发到demo01服务，需要注意的是后面/**和/*的区别
+        - Path=/demo01/**
+        filters: # 截取url，就是会把/demo01截掉，后面的部分才是转发的url
+        - StripPrefix=1
+        uri: lb://demo01  #指向注册中心的服务，使用lb:// 加上ServiceName，也可以通过http://localhost:8080指向
+
+      - id: demo02
         predicates:
-        - Path=/serverbase-databases/**
+        - Path=/demo02/**
         filters:
         - StripPrefix=1
-        uri: lb:serverbase-databases #服务名称
+        uri: lb://demo02
