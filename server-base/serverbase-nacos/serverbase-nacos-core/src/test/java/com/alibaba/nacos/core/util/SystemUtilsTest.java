@@ -79,32 +79,32 @@ public class SystemUtilsTest {
 
     }
 
-    @Test
-    public void testReadClusterConf() throws IOException {
-        FileUtils.forceMkdir(new File(SystemUtils.getConfFilePath()));
-
-        String lineSeparator = System.getProperty("line.separator");
-
-        /*
-         * #it is ip
-         * #example
-         * 192.168.1.1:8848
-         */
-        SystemUtils.writeClusterConf("#it is ip" + lineSeparator + "#example" + lineSeparator + "192.168.1.1:8848");
-        Assert.assertEquals(SystemUtils.readClusterConf().get(0), "192.168.1.1:8848");
-
-        /*
-         * #it is ip
-         *   #example
-         *   # 192.168.1.1:8848
-         *   192.168.1.2:8848 # Instance A
-         */
-        SystemUtils.writeClusterConf(
-            "#it is ip" + lineSeparator + "  #example" + lineSeparator + "  # 192.168.1.1:8848" + lineSeparator
-                + "  192.168.1.2:8848 # Instance A  " + lineSeparator + "192.168.1.3#:8848");
-        List<String> instanceList = SystemUtils.readClusterConf();
-        Assert.assertEquals(instanceList.get(0), "192.168.1.2:8848");
-        Assert.assertEquals(instanceList.get(1), "192.168.1.3");
-    }
+//    @Test
+//    public void testReadClusterConf() throws IOException {
+//        FileUtils.forceMkdir(new File(SystemUtils.getConfFilePath()));
+//
+//        String lineSeparator = System.getProperty("line.separator");
+//
+//        /*
+//         * #it is ip
+//         * #example
+//         * 192.168.1.1:8848
+//         */
+//        SystemUtils.writeClusterConf("#it is ip" + lineSeparator + "#example" + lineSeparator + "192.168.1.1:8848");
+//        Assert.assertEquals(SystemUtils.readClusterConf().get(0), "192.168.1.1:8848");
+//
+//        /*
+//         * #it is ip
+//         *   #example
+//         *   # 192.168.1.1:8848
+//         *   192.168.1.2:8848 # Instance A
+//         */
+//        SystemUtils.writeClusterConf(
+//            "#it is ip" + lineSeparator + "  #example" + lineSeparator + "  # 192.168.1.1:8848" + lineSeparator
+//                + "  192.168.1.2:8848 # Instance A  " + lineSeparator + "192.168.1.3#:8848");
+//        List<String> instanceList = SystemUtils.readClusterConf();
+//        Assert.assertEquals(instanceList.get(0), "192.168.1.2:8848");
+//        Assert.assertEquals(instanceList.get(1), "192.168.1.3");
+//    }
 
 }
