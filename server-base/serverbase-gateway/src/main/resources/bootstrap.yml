@@ -1,10 +1,10 @@
 spring:
   cloud:
     gateway:
-      default-filters: #代表默认的过滤器，这是一个全局的过滤器，不属于任何一个route
       discovery:
         locator:
           enabled: true # 表示注册中心生效，我们可以通过注册中心的服务名进行路由转发
+          lowerCaseServiceId: true
       routes:
       - id: demo01 #表示路由的唯一id
         predicates: #表示path地址，根据url，以demo01开头的会被转发到demo01服务，需要注意的是后面/**和/*的区别
