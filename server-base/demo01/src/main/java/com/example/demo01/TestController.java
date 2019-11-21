@@ -3,6 +3,8 @@ package com.example.demo01;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.demo01.feign.DemoClient;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,10 +28,32 @@ public class TestController {
     @Resource
     JdbcTemplate jdbcTemplate;
 
+    @Resource
+    private DemoClient demoClient;
+
 
     @GetMapping("/say")
     public String say() {
-        return "demo1 9001";
+        return demoClient.userList().toString();
+    }
+
+    @GetMapping("/save")
+    @GlobalTransactional
+    public String save() {
+
+        String sql = "insert into student(id,name,age)value(5,\"李少\",19)";
+        jdbcTemplate.execute(sql);
+        demoClient.save2();
+        return "success";
+    }
+
+    @GetMapping("/save2")
+    public String save2() {
+        System.out.println("this is save2 method");
+        String sql = "insert into teacher(id,name,sex)value(1,\"老王\",1)";
+        jdbcTemplate.execute(sql);
+        int i=1/0;
+        return "success";
     }
 
     @GetMapping("phoneList")
