@@ -7,6 +7,7 @@ import com.example.demo01.feign.DemoClient;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,14 +32,17 @@ public class TestController {
     @Resource
     private DemoClient demoClient;
 
+    @Resource
+    private Environment env;
+
 
     @GetMapping("/say")
     public String say() {
-        return demoClient.userList().toString();
+        return env.getProperty("key");
     }
 
     @GetMapping("/save")
-    @GlobalTransactional
+//    @GlobalTransactional
     public String save() {
 
         String sql = "insert into student(id,name,age)value(5,\"李少\",19)";
@@ -52,7 +56,7 @@ public class TestController {
         System.out.println("this is save2 method");
         String sql = "insert into teacher(id,name,sex)value(1,\"老王\",1)";
         jdbcTemplate.execute(sql);
-        int i=1/0;
+//        int i=1/0;
         return "success";
     }
 

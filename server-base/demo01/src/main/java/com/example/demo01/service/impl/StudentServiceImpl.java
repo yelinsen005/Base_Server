@@ -35,5 +35,10 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
 
         return studentMapper.getById(id);
     }
+
+    @Override
+    public void insertWithID(Student student) {
+        studentMapper.insertWithID(student);
+    }
 }
 

@@ -5,4 +5,8 @@
     <select id="getById" resultType="com.example.demo01.bean.Student">
          select * from student where id=#{id}
     </select>
+
+    <insert id="insertWithID" parameterType="com.example.demo01.bean.Student">
+        insert into student(id,name,age) values (#{id},#{name},#{age})
+    </insert>
 </mapper>
