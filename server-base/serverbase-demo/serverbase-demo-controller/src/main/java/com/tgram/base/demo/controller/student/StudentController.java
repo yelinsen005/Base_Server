@@ -1,8 +1,8 @@
 package com.tgram.base.demo.controller.student;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.tgram.base.demo.client.DemoClient;
 import com.tgram.base.demo.entity.Student;
+import com.tgram.base.demo.feign.DemoClient;
 import com.tgram.base.demo.service.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

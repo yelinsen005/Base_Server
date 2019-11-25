@@ -1,6 +1,6 @@
 package com.tgram.base.demo.controller;
 
-import com.tgram.base.demo.client.DemoClient;
+import com.tgram.base.demo.feign.DemoClient;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
