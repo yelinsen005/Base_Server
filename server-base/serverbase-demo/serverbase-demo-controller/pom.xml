@@ -13,10 +13,12 @@
     <artifactId>serverbase-demo-controller</artifactId>
     <name>${project.artifactId}</name>
     <description>演示服务接口模块</description>
+    <version>${project.version}</version>
     <dependencies>
         <dependency>
             <groupId>com.tgram.base</groupId>
             <artifactId>serverbase-demo-biz</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

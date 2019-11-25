@@ -9,35 +9,43 @@
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <properties>
+        <model.version>4.0.0</model.version>
+    </properties>
 
     <artifactId>serverbase-demo-biz</artifactId>
     <name>${project.artifactId}</name>
     <description>演示服务业务模块</description>
+    <version>${project.version}</version>
     <dependencies>
         <dependency>
             <groupId>com.tgram.base</groupId>
             <artifactId>serverbase-demo-entity</artifactId>
+            <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.tgram.base</groupId>
-            <artifactId>serverbase-databases</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.tgram.base</groupId>
-            <artifactId>zuihou-dozer-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-context</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
         </dependency>
     </dependencies>
 

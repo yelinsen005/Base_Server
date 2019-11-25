@@ -13,6 +13,7 @@
     <artifactId>serverbase-demo-entity</artifactId>
     <name>${project.artifactId}</name>
     <description>演示服务实体模块</description>
+    <version>${project.version}</version>
     <dependencies>
         <!--
         <dependency>
